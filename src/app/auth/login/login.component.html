@@ -1,0 +1,33 @@
+<form [formGroup]="loginForm">
+  
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+      <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div *ngIf="email.invalid && (email.dirty || email.touched)"
+         class="text-danger">
+  
+        <div *ngIf="email.errors?.['required']">
+          El email es requerido.
+        </div>
+        <div *ngIf="email.errors?.['email']">
+          El email dede tener un formato valido.
+        </div>
+    </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input formControlName="pass" type="password" class="form-control" id="exampleInputPassword1">
+      <div *ngIf="pass.invalid && (pass.dirty || pass.touched)"
+         class="text-danger">
+  
+        <div *ngIf="pass.errors?.['required']">
+          La contraseña es requerida.
+        </div>
+        <div *ngIf="pass.errors?.['email']">
+          La contraseña  un formato valido.
+        </div>
+    </div>
+    </div>
+    <p class="text-danger">{{loginError}}</p>
+    <button type="submit" (click)="login()" class="btn btn-primary">Iniciar Sesion</button>
+  </form>
