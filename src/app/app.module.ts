@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './shared/nav/nav.component';
+import { GraficosComponent } from './shared/graficos/graficos.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavComponent } from './shared/nav/nav.component';
     FooterComponent,
     DashboardComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    GraficosComponent
     
   ],
   imports: [
@@ -27,7 +29,8 @@ import { NavComponent } from './shared/nav/nav.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
   
    
   ],
