@@ -1,0 +1,59 @@
+.square {
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(79, 79, 203);
+    border: 5px solid black;
+    font-size: 60px;
+   
+  }
+  #porcentaje {
+    position: absolute;
+    font-size: 24px;
+    color: white;
+  }
+  .center {
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección a columna */
+    align-items: center;
+    height: 50vh; /* Ajusta la altura del contenedor central */
+  }
+  .input{
+   margin-top: 10px;
+   border: 3px solid black;
+   border-radius: 8px;
+}
+
+/*Tabla*/
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección a columna */
+    align-items: center; /* Centramos horizontalmente */
+    margin-bottom: 10%;
+    margin-top: -400px;
+    
+  }
+  
+  .item {
+    width: 80%; /* Ajustamos el ancho de los elementos */
+    padding: 20px;
+    font-size: 30px;
+    text-align: left ;
+
+    background-color: #3498db;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+   .item:hover {
+    background-color: #2980b9;
+}
+.etiqueta{
+    font-size: 25px;
+    margin-left: 80%;
+
+}
+.icon{
+    
+    font-size: 50%;
+}
