@@ -13,6 +13,9 @@ import { LoginComponent } from './auth/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavComponent } from './shared/nav/nav.component';
 import { GraficosComponent } from './shared/graficos/graficos.component';
+import { SpendformComponent } from './pages/spendform/spendform.component';
+import { UserformularioComponent } from './pages/userformulario/userformulario.component';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { GraficosComponent } from './shared/graficos/graficos.component';
     DashboardComponent,
     LoginComponent,
     NavComponent,
-    GraficosComponent
+    GraficosComponent,
+    SpendformComponent,
+    UserformularioComponent,
+   
     
   ],
   imports: [

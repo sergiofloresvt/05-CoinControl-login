@@ -8,11 +8,13 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class LoginService {
- /*Con esta varible hacemos la suscripcion cuando el usuario
- alla iniciado sesion y cambiaremos la vista para este user */
+
   actualUserLoginOn: BehaviorSubject<boolean>= new BehaviorSubject <boolean>(false)
+   /*Con esta varible hacemos la suscripcion cuando el usuario
+ alla iniciado sesion y cambiaremos la vista para este user */
 
   actualUserData: BehaviorSubject<User> = new BehaviorSubject<User>({id:0, email:''});
+  
   constructor( private http:HttpClient) { }
 
   login(credentials:LoginRequest):Observable<User>{

@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center align-items-center vh-100 bg-dark text-primary">
+    <form class="text-center bg-light p-5" (ngSubmit)="onSubmit()">
+      <h1 class="mb-4">Register</h1>
+  
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="user.username" name="username" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="user.email" name="email" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" [(ngModel)]="user.passw" name="password" class="form-control" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="salary">Salary</label>
+        <input type="number" id="salary" [(ngModel)]="user.salario" name="salary" class="form-control" required>
+      </div>
+  
+      <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+  </div>
+  

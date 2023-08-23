@@ -10,8 +10,9 @@ import { LoginRequest } from 'src/app/service/auth/loginRequest';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
-/*Variable para mostrar el error */
+
 loginError: string=''
+/*Variable para mostrar el error */
 
 /*Creamos un variable para el formulario
 reactivo con el servio formBuilder*/
@@ -23,8 +24,8 @@ reactivo con el servio formBuilder*/
   
 
 constructor( private fb: FormBuilder,
-            private router:Router,
-            private loginService:LoginService){
+             private router:Router,
+             private loginService:LoginService){
   
 
 }
