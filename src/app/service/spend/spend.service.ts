@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SpendRequest } from './spendRequest';
 import { Spend } from 'src/app/model/spend';
+import { Expense } from 'src/app/model/expense';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class SpendService {
    createUser(user: any): Observable<any> {
     const url = `${this.baseUrl}/api/create`; // Cambia la URL al endpoint correcto
     return this.http.post(url, user);
+  }
+  getExpenseById(id:number):Observable<Expense>{
+    const url=`${this.baseUrl}/expense//find/{id}`
+    return this.http.get<Expense>(url)
   }
 }
