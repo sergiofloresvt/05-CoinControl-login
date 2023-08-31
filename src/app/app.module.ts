@@ -15,6 +15,7 @@ import { NavComponent } from './shared/nav/nav.component';
 import { GraficosComponent } from './shared/graficos/graficos.component';
 import { SpendformComponent } from './pages/spendform/spendform.component';
 import { UserformularioComponent } from './pages/userformulario/userformulario.component';
+import { ExpenseComponent } from './pages/expense/expense.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { UserformularioComponent } from './pages/userformulario/userformulario.c
     GraficosComponent,
     SpendformComponent,
     UserformularioComponent,
+    ExpenseComponent,
    
     
   ],

@@ -5,6 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { GraficosComponent } from './shared/graficos/graficos.component';
 import { SpendformComponent } from './pages/spendform/spendform.component';
 import { UserformularioComponent } from './pages/userformulario/userformulario.component';
+import { ExpenseComponent } from './pages/expense/expense.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/inicio', pathMatch:'full'},
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'graficos', component:GraficosComponent},
   {path: 'spendform', component:SpendformComponent},
-  {path: 'formulario', component: UserformularioComponent}
+  {path: 'formulario', component: UserformularioComponent},
+  {path: 'expense', component: ExpenseComponent}
   
 ];
 
