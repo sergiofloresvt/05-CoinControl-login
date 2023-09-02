@@ -16,13 +16,19 @@ export class ExpenseService {
     return this.http.get<Expense>(url)
   }
 
+
+/*Traer todas los registros de gastos */
   getExpense(){
     const url=`${this.baseUrl}/gastos/all`
     return this.http.get(url)
   }
+
+  
   /*Actualizar la suma del gasto  */
   updateExpense(expense: Expense){
     const url = `${this.baseUrl}/gastos/update/${expense.id}`
     return this.http.put(url, expense)
   }
+
+
 }

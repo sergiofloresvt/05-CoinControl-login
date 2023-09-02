@@ -4,12 +4,14 @@
     <div class="col-md-4" *ngFor="let item of itemExpense">
       <div class="input-section" >
         <input type="number" [(ngModel)]="item.inputMonto" placeholder="Ingrese monto">
-        <button (click)="addMonto(item)">Sumar Monto</button>
+        <!-- <button (click)="addMonto(item)">Sumar Monto</button> -->
       </div>
       <div class="card custom-card">
         <div class="card-body">
           <h5 class="card-title">ID: {{ item.id }}</h5>
           <p class="card-text">Monto: {{ item.monto }}</p>
+          <p class="card-text">Categori: {{ item.category_id}}</p>
+          <p class="card-text">Description: {{ item.description }}</p>
         </div>
       </div>
       

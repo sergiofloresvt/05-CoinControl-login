@@ -28,21 +28,22 @@ export class ExpenseComponent implements OnInit {
       console.log("Error: ", error)
     })
   }
-  addMonto(item: Expense): void {
-    if (item.inputMonto) {
-      item.monto += parseFloat(item.inputMonto);
-      item.inputMonto = ''; // Limpia el input después de la suma
+
+  // addMonto(item: Expense): void {
+  //   if (item.inputMonto) {
+  //     item.monto += parseFloat(item.inputMonto);
+  //     item.inputMonto = ''; // Limpia el input después de la suma
     
-    this.expenseService.updateExpense(item).subscribe((response:any)=>
-    {
-      console.log('Monto actualizado', response)
-    },
-    (error:any)=>{
-      console.error('Error al actualizar', error)
-    }
-    )
-    }
-  }
+  //   this.expenseService.updateExpense(item).subscribe((response:any)=>
+  //   {
+  //     console.log('Monto actualizado', response)
+  //   },
+  //   (error:any)=>{
+  //     console.error('Error al actualizar', error)
+  //   }
+  //   )
+  //   }
+  // }
 
 //   toggleInput(item: Expense): void {
 //     item.showInput = !item.showInput;
@@ -56,6 +57,9 @@ interface Expense {
   id: number;
   monto: number;
   inputMonto?: string; // Campo para vincular el input en el HTML
+  description: string
+  date?: string
+  category_id: number,
   // showInput?: boolean; // Propiedad para mostrar u ocultar el campo y el botón
 }
 

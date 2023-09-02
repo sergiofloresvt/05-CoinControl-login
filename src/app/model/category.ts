@@ -1,7 +1,7 @@
 import { Expense } from "./expense";
 
 export interface Category{
-    idCategory: number,
+    id: number,
     name: number,
-    expenses: Expense[]
+    // expenses: Expense[]
 }
