@@ -1,20 +1,76 @@
 <p>expense works!</p>
-<div class="container">
-  <div class="row">
-    <div class="col-md-4" *ngFor="let item of itemExpense">
-      <div class="input-section" >
-        <input type="number" [(ngModel)]="item.inputMonto" placeholder="Ingrese monto">
-        <!-- <button (click)="addMonto(item)">Sumar Monto</button> -->
-      </div>
-      <div class="card custom-card">
-        <div class="card-body">
-          <h5 class="card-title">ID: {{ item.id }}</h5>
-          <p class="card-text">Monto: {{ item.monto }}</p>
-          <p class="card-text">Categori: {{ item.category_id}}</p>
-          <p class="card-text">Description: {{ item.description }}</p>
+
+
+  <!-- <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let categoryId of categoryIds; let i = index"> -->
+        <!-- Asigna clases CSS a las tarjetas según la categoría -->
+        <!-- <div class="card custom-card" [class.category-color-1]="i === 0" [class.category-color-2]="i === 1" [class.category-color-3]="i === 2">
+          <div class="card-body">
+            <h5 class="card-title">Categoría ID: {{ categoryId }}</h5>
+            <div *ngFor="let expense of categoryExpenses[categoryId.toString()]">
+              <p class="card-text">ID: {{ expense.id }}</p>
+              <p class="card-text">Monto: {{ expense.monto }}</p>
+              <p class="card-text">Descripción: {{ expense.description }}</p>
+            </div>
+          </div>
         </div>
       </div>
-      
+    </div>
+  </div> -->
+  <select [(ngModel)]="selectedCategoryId">
+    <option [value]="null">Todas las categorías</option>
+    <option *ngFor="let categoryId of categoryIds" [value]="categoryId">
+      {{ categoryId }}
+    </option>
+
+  </select>
+  <button (click)="getExpensesBySelectedCategory()">Seleccionar</button>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let categoryId of categoryIds; let i = index">
+        <!-- Asigna clases CSS a las tarjetas según la categoría -->
+        <div class="card custom-card" [class.category-color-1]="i === 0" [class.category-color-2]="i === 1" [class.category-color-3]="i === 2">
+          <div class="card-body">
+            <h5 class="card-title">Categoría ID: {{ categoryId }}</h5>
+            <!-- Suma los montos de la categoría y muéstralos -->
+            <p class="card-text">Total Monto: {{ sumMontos(categoryExpenses[categoryId.toString()]) }}</p>
+            <div *ngFor="let expense of categoryExpenses[categoryId.toString()]">
+              <p class="card-text">ID: {{ expense.id }}</p>
+              <p class="card-text">Monto: {{ expense.monto }}</p>
+              <p class="card-text">Descripción: {{ expense.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let categoryId of categoryIds; let i = index">
+        <!-- Asigna clases CSS a las tarjetas según la categoría -->
+        <div class="card custom-card" [class.category-color-1]="i === 0" [class.category-color-2]="i === 1" [class.category-color-3]="i === 2">
+          <div class="card-body">
+            <h5 class="card-title">Categoría ID: {{ categoryId }}</h5>
+
+            <p class="card-text">Total : {{ sumMontos(categoryExpenses[categoryId.toString()]) }}</p>
+            <!-- Agrega un botón para mostrar/ocultar los detalles -->
+            <button class="btn btn-link" (click)="toggleDetails(categoryId)">Mostrar/Ocultar Detalles</button>
+            <!-- Muestra los detalles solo si showDetails[categoryId] es true -->
+            <div *ngIf="showDetails[categoryId.toString()]">
+              <!-- Suma los montos de la categoría y muéstralos -->
+             
+              <div *ngFor="let expense of categoryExpenses[categoryId.toString()]">
+                <p class="card-text">ID: {{ expense.id }}</p>
+                <p class="card-text">Monto: {{ expense.monto }}</p>
+                <p class="card-text">Descripción: {{ expense.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

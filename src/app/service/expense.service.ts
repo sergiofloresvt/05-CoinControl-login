@@ -7,7 +7,7 @@ import { Expense } from '../model/expense';
   providedIn: 'root'
 })
 export class ExpenseService {
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'http://localhost:8080/gastos';
 
   constructor( private http:HttpClient) { }
 
@@ -17,18 +17,37 @@ export class ExpenseService {
   }
 
 
-/*Traer todas los registros de gastos */
+/*Traer todos los registros de gastos */
   getExpense(){
-    const url=`${this.baseUrl}/gastos/all`
+    const url=`${this.baseUrl}/all`
     return this.http.get(url)
   }
 
   
-  /*Actualizar la suma del gasto  */
+  /*Actualizar el campo monto en la tabla gasto */
   updateExpense(expense: Expense){
-    const url = `${this.baseUrl}/gastos/update/${expense.id}`
+    const url = `${this.baseUrl}/update/${expense.id}`
     return this.http.put(url, expense)
   }
 
+  /*Traer los gastos de la misma categoria */
+  // GetExpenseByCategory(categoryId: number){
+  // const url=`${this.baseUrl}/gastos/find/bycategory/${categoryId}`
+  // return this.http.get(url)  
+  // }
 
+/*Traer los gastos de la misma categoria indicando el ID que eligas */
+  getExpensesByCategory(categoryId: number): Observable<Expense[]> {
+    const url = `${this.baseUrl}/find/bycategory/${categoryId}`;
+    return this.http.get<Expense[]>(url);
+  }
+
+  getAllCategoryIds(): Observable<number[]> {
+    const url = `${this.baseUrl}/find/categoryId`;
+    return this.http.get<number[]>(url);
+  }
+
+ 
 }
+  
+
